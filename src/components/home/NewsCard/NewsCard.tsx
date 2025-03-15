@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
 import { ArticleItemProps } from "./NewsCard.types";
 import { ColorPalette } from "../../../styles/colorPalette";
@@ -11,10 +10,8 @@ import {
 } from "./NewsCard.styles";
 
 const NewsCard: React.FC<ArticleItemProps> = ({ article }) => {
-  const navigate = useNavigate();
-
   const clickHandler = (article: Article) => {
-    navigate(article.url);
+    window.open(article.url, "_blank");
   };
 
   return (
